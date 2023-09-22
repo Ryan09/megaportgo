@@ -28,6 +28,7 @@ type VXCOrderConfiguration struct {
 type VXCOrderAEndConfiguration struct {
 	VLAN          int                       `json:"vlan"`
 	PartnerConfig VXCOrderAEndPartnerConfig `json:"partnerConfig,omitempty"`
+	InnerVLAN     int                       `json:"innerVlan,omitempty"`
 }
 
 type VXCOrderAEndPartnerConfig struct {
@@ -37,6 +38,7 @@ type VXCOrderAEndPartnerConfig struct {
 type VXCOrderBEndConfiguration struct {
 	VLAN       int    `json:"vlan,omitempty"`
 	ProductUID string `json:"productUid"`
+	InnerVLAN  int    `json:"innerVlan,omitempty"`
 }
 
 type VXCOrderConfirmation struct {
@@ -133,6 +135,7 @@ type PartnerOrderContents struct {
 type PartnerOrderBEndConfiguration struct {
 	PartnerPortID string      `json:"productUid"`
 	PartnerConfig interface{} `json:"partnerConfig"`
+	InnerVLAN     int         `json:"innerVlan,omitempty"`
 }
 
 type PartnerOrderAzurePartnerConfig struct {

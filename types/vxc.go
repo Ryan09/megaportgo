@@ -51,6 +51,7 @@ type VXCEndConfiguration struct {
 	LocationID    int    `json:"locationId"`
 	Location      string `json:"location"`
 	VLAN          int    `json:"vlan"`
+	InnerVLAN     int    `json:"innerVlan,omitempty"`
 	SecondaryName string `json:"secondaryName"`
 }
 
