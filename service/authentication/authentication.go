@@ -117,7 +117,9 @@ func (a *Authentication) getSessionToken() (string, error) {
 		return "", parseErr
 	}
 
-	return authResponse.Data["session"].(string), nil
+	oAuthToken := authResponse.Data["oAuthToken"].(map[string]interface{})
+
+	return oAuthToken["accessToken"].(string), nil
 }
 
 // generateOneTimePassword Generates a OTP using a Google Authenticator-compatible OTP Key. The field `one_time_password_key` must be set in

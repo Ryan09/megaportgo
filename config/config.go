@@ -45,7 +45,7 @@ func (c *Config) MakeAPICall(verb string, endpoint string, body []byte) (*http.R
 		return nil, reqErr
 	}
 
-	request.Header.Set("X-Auth-Token", c.SessionToken)
+	request.Header.Set("Authorization", "Bearer "+c.SessionToken)
 	request.Header.Set("Accept", "application/json")
 	request.Header.Set("User-Agent", "Go-Megaport-Library/0.1")
 
